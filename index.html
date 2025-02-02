@@ -119,6 +119,33 @@
 
         listElement.innerHTML = ``;
 
+        for(let i=0; i<5; i++){
+            const listItem = document.createElement("div");
+            listItem.innerHTML = `
+            <div class="row gx-5 mx-4 ">
+            <div class="col-md-6 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5"
+                data-mdb-ripple-color="light">
+                <img src="${data[i].og}" class="img-fluid" />
+                <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+            </div>
+            </div>
+        
+            <div class="col-md-6 mb-4">
+            <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">${data[i].source}</span>
+            <h4><strong>${data[i].title}</strong></h4>
+            <p class="text-muted">
+                ${data[i].title}
+            </p>
+            <a href="${data[i].link}" type="button" class="btn btn-primary">Read more</a>
+            </div>
+        </div>`;
+        listElement.appendChild(listItem);
+        }
+        
+        /*
         data.forEach((item) => {
           const listItem = document.createElement("div");
           listItem.innerHTML = `<div class="row gx-5 mx-4 ">
@@ -142,7 +169,7 @@
         </div>
       </div>`;
       listElement.appendChild(listItem);
-        });
+        }); */
 
       }
       window.onload = function(){

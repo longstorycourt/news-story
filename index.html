@@ -86,7 +86,7 @@
 
         <script>
       function getNews(category) {
-        fetch("https://ok.surf/api/v1/cors/news-feed", {
+        fetch("https://ok.surf/api/v1/news-feed", {
           method: "GET",
           headers: {
             accept: "application/json",
@@ -94,9 +94,9 @@
         })
           .then((response) => response.json())
           .then((json) => {
-            console.log(json.Business);
+            console.log(json);
 
-            switch (category) {
+            /*switch (category) {
               case "biz":
                 renderList(json.Business);
                 break;
@@ -112,6 +112,7 @@
               default:
                 renderList(json.Technology);
             }
+                */
           });
       }
       function renderList(data) {
